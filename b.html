@@ -12,7 +12,6 @@
 	sendToooo = false;	 
 	
 function link() {
-	alert("you're dumb");
 	window.open("thankyou.html");
 }
 
@@ -29,7 +28,6 @@ function sendMail() {
 	if (sendToooo) {
 			document.getElementById("form").action = "mailTo:studentfinancialservices@marist.edu?Subject=Complaint Submission";
 	}
-	window.location = "thankyou.html";
 }
 	function sendToYo() {
 		sendTo = true;
@@ -53,7 +51,7 @@ function sendMail() {
 		sendTo = false;
 		sendToo = false;
 		sendTooo = false;
-		sendToooo = false;
+		sendToooo = true;
 	}
 	
 	</script> 
