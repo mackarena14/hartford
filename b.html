@@ -4,26 +4,32 @@
 	<meta charset = "utf-8">
 	<title>Marist Complaint Service</title>
 	<!-- <script src = "new.js" = type = "text/javascript"></script>  -->
-	<script type = "text/javascript" >
+	<script type = "text/javascript">
 	
 	sendTo = false;
 	sendToo = false;
 	sendTooo = false;
 	sendToooo = false;	 
 	
+function link() {
+	alert("you're dumb");
+	window.open("thankyou.html");
+}
+
 function sendMail() {
 	if (sendTo) {
 			document.getElementById("form").action = "mailTo:housing@marist.edu?Subject=Complaint Submission";
 	}
-	if (sendToo) {
+	if (sendTooo) {
 			document.getElementById("form").action = "mailTo:mohamad.charafeddine@marist.edu?Subject=Complaint Submission";
 	}
-	if (sendTooo) {
+	if (sendToo) {
 			document.getElementById("form").action = "mailTo:registrar@marist.edu?Subject=Complaint Submission";
 	}
 	if (sendToooo) {
 			document.getElementById("form").action = "mailTo:studentfinancialservices@marist.edu?Subject=Complaint Submission";
 	}
+	window.location = "thankyou.html";
 }
 	function sendToYo() {
 		sendTo = true;
@@ -49,9 +55,6 @@ function sendMail() {
 		sendTooo = false;
 		sendToooo = false;
 	}
-	function link(){
-		document.location.href = "thankyou.html";
-	}
 	
 	</script> 
 	
@@ -63,7 +66,7 @@ function sendMail() {
 		<h1>Marist Process Improvement Form</h1>
 		<h2>Please answer all the questions below so that </h2>
 		<h2>we can accurrately record your complaint and get back to you as soon as possible. </h2>
-		<FORM id = "form" METHOD=POST ACTION="mailto:Jessica.Rieger1@marist.edu" ENCTYPE="text/plain"onSubmit = "return sendMail();" >
+		<FORM id = "form" METHOD="POST" ACTION ="mailto:Jessica.Rieger1@marist.edu" ENCTYPE="text/plain"onSubmit = "return sendMail();" >
 		Name : <INPUT TYPE="text" NAME="name"> <BR>
 		Email : <INPUT TYPE="text" NAME="email"> <BR>
 		Department : <br>Housing<input id="house" type="radio" name="department" value="Housing" onclick="sendToYo();"> <br>
@@ -72,15 +75,16 @@ function sendMail() {
   		Financial Services<input id="fins" type="radio" name="department" value = "Financial Services" onclick="sendTooooYo();"><br> 
   		
 
-		Comments <BR> 
+		Comments: <BR> 
 		<TEXTAREA NAME="Complaint" ROWS="10" WRAP="hard" id = "comments">
 		</TEXTAREA>
-<!-- 		<INPUT NAME="redirect" TYPE="hidden" VALUE="index.html">
-		<INPUT NAME="NEXT_URL" TYPE="hidden" VALUE="index.html"> -->
+ 		<INPUT NAME="redirect" TYPE="hidden" VALUE="index.html">
+		<INPUT NAME="NEXT_URL" TYPE="hidden" VALUE="index.html">
 		<BR>
-		<INPUT TYPE="submit" VALUE="Send" onclick = "link();">
+		<INPUT TYPE="submit" VALUE="Send" onclick="link();"></INPUT></a>		
 		<INPUT TYPE="reset" VALUE="Clear">
 		</FORM>
+		
 
 
 
